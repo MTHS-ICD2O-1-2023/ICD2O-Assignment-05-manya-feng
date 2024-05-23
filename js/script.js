@@ -5,20 +5,23 @@
 // This file contains the JS functions for index.html
 "use strict"
 
-function generatePyramid() {
-  var inputNumber = parseInt(document.getElementById("inputNumber").value)
-  var resultElement = document.getElementById("result")
-  if (isNaN(inputNumber) || inputNumber < 1) {
-    resultElement.innerHTML = "Please enter a positive number."
-    return
+function calculate() {
+  // Input
+  let inputNumber = parseInt(document.getElementById("inputNumber").value)
+  
+  // Process
+  let numberator = 4
+  let denominator = 1
+  let counter = 0
+  let result = 4
+
+  while (counter < inputNumber - 1) {
+    denominator += 2
+    numberator = numberator * -1
+    result = result + (numberator / denominator)
+    counter += 1
   }
 
-  var pyramid = ""
-  for (var i = 1; i <= inputNumber; i++) {
-    var spaces = " ".repeat(inputNumber - i)
-    var asterisks = "*".repeat(i * 2 -1)
-    pyramid += spaces + asterisks + "<br>"
-  }
-
-  document.getElementById("result").innerHTML = pyramid
+  // Output
+  document.getElementById("answer").innerHTML = "The answer is = " + result.toFied(3)
 }
