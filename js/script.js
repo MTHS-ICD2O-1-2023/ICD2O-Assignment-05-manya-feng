@@ -5,7 +5,7 @@
 // This file contains the JS functions for index.html
 "use strict"
 
-function calculate() {
+function myButtonClicked() {
   // Input
   let inputNumber = parseInt(document.getElementById("inputNumber").value)
   
@@ -23,5 +23,5 @@ function calculate() {
   }
 
   // Output
-  document.getElementById("answer").innerHTML = "The answer is = " + result.toFied(3)
+  document.getElementById("answer").innerHTML = "The answer is = " + result.toFixed(3)
 }
